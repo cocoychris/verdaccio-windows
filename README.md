@@ -1,3 +1,18 @@
+# 這是 verdaccio-windows 的 Andrash 客製化版本
+- 此客製化版本，專門用於 Andrash-AutomationKit。
+- 主要的差異是增加了「default_data」目錄，及「apply_default_user_data.bat」檔案。
+
+## 增加的檔案及用途
+- 「default_data」目錄：此目錄中包含了 verdaccio-windows 啟動時所需要的設定檔預設範本，如： config.yaml。
+- 「apply_default_user_data.bat」檔案：執行此檔案可自動套用預設設定檔。會將 default_data 中的所有檔案複製到 user_data 目錄中
+- 「user_data」目錄：此目錄中包含了 verdaccio-windows 啟動時所需要的設定檔們。其中的 storage 目錄裝載了所有已被上傳到伺服器的套件。若此目錄不存在，可執行 apply_default_user_data.bat 來套用 default_data 中的檔案。
+
+## 特別注意
+- verdaccio-windows 必須先經過安裝程序才可被啟動使用，安裝時必須傳入參數指定所要使用的設定檔，此時就可傳入「user_data/config.yaml」作為設定檔。詳情請參考下面的 Installation 章節。 
+
+**以下為 verdaccio-windows 的原始說明檔，請參考這些內容來學習如何操作 verdaccio-windows**
+===
+
 # verdaccio-windows
 
 [Verdaccio](https://verdaccio.org/) is very useful server that provides "A lightweight private npm proxy registry".
